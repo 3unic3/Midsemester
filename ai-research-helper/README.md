@@ -1,7 +1,7 @@
 # AI Research Helper — Multi-Agent Agentic RAG
 
 ## Architecture
-
+```
 User Query
     │
 Coordinator Agent  (analyzes query, creates plan per agent)
@@ -14,7 +14,7 @@ Structured   Academic        Web           Recommend
                         
                  Synthesis Agent (combines all findings → final answer)
 
-
+```
 ## Agents & Tools
 **Coordinator Agent** - Analyzes the question, creates a tailored search plan for each agent using tool calling, Ollama LLM 
 **Agent 1 — Structured** - Fetches factual and encyclopedic information, Wikipedia REST API 
