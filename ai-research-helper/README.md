@@ -4,17 +4,22 @@
 ```
 User Query
     │
-Coordinator Agent  (analyzes query, creates plan per agent)
-  |            |               |             |
+    ▼
+Coordinator Agent [analyzes query, creates search plan per agent]
+    │
+    ├─────────────────────────────────────────┐
+    ▼           ▼              ▼              ▼
 Agent 1      Agent 2        Agent 3        Agent 4
 Structured   Academic        Web           Recommend
 (Wikipedia)  (arxiv)      (DuckDuckGo)   (Wikipedia)
 
+    └─────────────────────────────────────────┘
                         │  all run in parallel
-                        
-                 Synthesis Agent (combines all findings → final answer)
-
+                        ▼
+                 Synthesis Agent      ← combines all findings → final answer
 ```
+
+---
 ## Agents & Tools
 **Coordinator Agent** - Analyzes the question, creates a tailored search plan for each agent using tool calling, Ollama LLM 
 **Agent 1 — Structured** - Fetches factual and encyclopedic information, Wikipedia REST API 
